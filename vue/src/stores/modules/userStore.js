@@ -12,6 +12,9 @@ const useUserStore = defineStore(
         id: '', //User ID
         name: '', //Username
         avatar: '', //User avatar URL
+        sex: null, //Gender (0 = male, 1 = female, null = private), shown on the user profile
+        createTime: '', //Registration time (yyyy-MM-dd HH:mm:ss) used to calculate days since joining
+        roleName: '', //Role name (admin, companion, or user) used to select the page view
         loaded: false //The route guard uses this flag to tell whether user details are loaded, even if the username is empty
       }),
 
@@ -57,7 +60,7 @@ const useUserStore = defineStore(
               //Resolve the avatar URL
               let avatar = user.avatar || ""
 
-              //Check whether the avatar URL starts with http:// or https://
+              //Check whether the avatar URL contains http:// or https://
               if (avatar.indexOf('http://') === -1 && avatar.indexOf('https://') === -1) {
                 //The avatar URL is relative
                 if (avatar) {
@@ -72,6 +75,9 @@ const useUserStore = defineStore(
               this.id = user.userId
               this.name = user.userName
               this.avatar = avatar
+              this.sex = user.sex ?? null
+              this.createTime = user.createTime || ''
+              this.roleName = user.roleName || ''
               this.loaded = true //Mark user details as loaded
 
               //3. Resolve the promise
@@ -91,9 +97,12 @@ const useUserStore = defineStore(
           return new Promise(resolve => {
             //Call the sign-out endpoint. A failure does not block local cleanup.
             logout().catch(() => {}).finally(() => {
-              //1. Clear the token and user details from the store
+              //1. Clear the token and reset session fields in the store
               this.token = ''
               this.loaded = false
+              this.roleName = ''
+              this.sex = null
+              this.createTime = ''
 
               //2. Remove the locally stored token
               removeToken()

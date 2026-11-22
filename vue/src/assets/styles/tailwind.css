@@ -22,40 +22,53 @@
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* Brand color CSS variables */
+/* Brand color CSS variables for the player portal's warm orange theme, with no purple or gradients */
 @theme {
-  --color-primary: #409EFF;
-  --color-primary-light: #66B1FF;
-  --color-primary-dark: #3A8EE6;
-  --color-primary-bg: #ECF5FF;
-  --color-primary-border: #B3D8FF;
+  --color-primary: #f07c2a;
+  --color-primary-light: #ff9a4d;
+  --color-primary-dark: #d96a1f;
+  --color-primary-bg: #fff3e8;
+  --color-primary-border: #f7c59f;
 
-  --color-danger: #ef4444;
-  --color-danger-light: #fca5a5;
-  --color-danger-bg: #fef2f2;
+  --color-danger: #e8746b;
+  --color-danger-light: #f1a8a1;
+  --color-danger-bg: #fdf0ef;
 
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
+  --color-success: #26a69a;
+  --color-warning: #faad14;
   --color-info: #3b82f6;
 
-  --color-text-dark: #2D3748;
-  --color-text-medium: #718096;
+  --color-text-dark: #1f2d3d;
+  --color-text-medium: #909399;
   --color-text-light: #A0AEC0;
   --color-text-placeholder: #9CA3AF;
 
-  --color-bg-page: #f0f5fb;
+  --color-bg-page: #f7f8fa;
   --color-bg-card: #ffffff;
   --color-bg-light: #f5f7fa;
   --color-bg-hover: #f3f4f6;
 
   --color-border: #e5e7eb;
   --color-border-light: #f3f4f6;
-  --color-border-focus: #409EFF;
+  --color-border-focus: #f07c2a;
+
+  /* Warm orange color aliases for the player portal, based on the primary and semantic colors above */
+  --color-warm-primary: #f07c2a;      /* Primary color for buttons and emphasized text */
+  --color-warm-accent: #ff9a4d;       /* Highlights and icons */
+  --color-warm-deep: #d96a1f;         /* Darker primary color for hover states */
+  --color-warm-bg: #fff3e8;           /* Light orange background for selected items and tags */
+  --color-warm-border: #f0e4d8;       /* Warm border color */
+  --color-warm-page: #f7f8fa;         /* Page background */
+  --color-warm-text: #1f2d3d;         /* Primary text */
+  --color-warm-sub: #909399;          /* Secondary text */
+  --color-warm-success: #26a69a;      /* Success */
+  --color-warm-warning: #faad14;      /* Warning */
+  --color-warm-danger: #e8746b;       /* Danger and error */
 }
 
 /* Global base styles */
 @layer base {
-  /* Restore the pointer cursor after Tailwind Preflight resets it */
+  /* Restore the pointer cursor after Tailwind Preflight resets it on buttons */
   button:not(:disabled) {
     cursor: pointer;
   }
@@ -73,7 +86,7 @@
     text-decoration: none;
   }
 
-  /* Custom checkbox and radio styles in place of native styles and accent-color */
+  /* Custom checkbox and radio styles replace native styling and accent-color */
   input[type="checkbox"],
   input[type="radio"] {
     appearance: none;
@@ -93,14 +106,20 @@
   input[type="radio"] {
     border-radius: 9999px;
   }
-  input[type="checkbox"]:hover,
-  input[type="radio"]:hover {
+  input[type="checkbox"]:hover:not(:disabled),
+  input[type="radio"]:hover:not(:disabled) {
     border-color: var(--color-primary);
+  }
+  /* Dim disabled controls and show a not-allowed cursor */
+  input[type="checkbox"]:disabled,
+  input[type="radio"]:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
   }
   input[type="checkbox"]:focus-visible,
   input[type="radio"]:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(64, 158, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(240, 124, 42, 0.2);
   }
   input[type="checkbox"]:checked {
     border-color: var(--color-primary);
@@ -139,12 +158,23 @@
   }
 }
 
-/* Shared utilities */
+/* Shared utility classes */
 @layer components {
   .app-container {
     padding: 20px;
   }
   .mb8 {
     margin-bottom: 8px;
+  }
+  /* Inline SVG icon container for the player portal. v-html inserts SVG from icons.js. */
+  .u-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    line-height: 0;
+  }
+  .u-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 }

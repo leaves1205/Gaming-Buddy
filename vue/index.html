@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" type="image/png" href="/src/assets/logo/logo.png">
-    <title>Gaming-buddy</title>
+    <link rel="icon" href="/favicon.ico">
+    <title>Gaming Companion Booking Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
         body,
         #app {
             height: 100%;
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
             font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
         }
 
@@ -29,7 +29,7 @@
             width: 100%;
             height: 100%;
             z-index: 999999;
-            background: linear-gradient(135deg, #F8FAFC 0%, #E0F2FE 100%);
+            background: #fff3e8;
         }
 
         .loader-container {
@@ -53,7 +53,7 @@
 
         #loader div {
             position: absolute;
-            border: 4px solid #0EA5E9;
+            border: 4px solid #f07c2a;
             opacity: 1;
             border-radius: 50%;
             animation: lds-ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -72,8 +72,8 @@
                 opacity: 1;
             }
             100% {
-                top: 0px;
-                left: 0px;
+                top: 0;
+                left: 0;
                 width: 72px;
                 height: 72px;
                 opacity: 0;
@@ -91,7 +91,7 @@
 
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, #0EA5E9, #38BDF8);
+            background: #f07c2a;
             width: 0%;
             border-radius: 3px;
             transition: width 0.3s ease;
@@ -119,8 +119,8 @@
 
         /* Brand colors */
         :root {
-            --primary-color: #0EA5E9;
-            --primary-light: #38BDF8;
+            --primary-color: #f07c2a;
+            --primary-light: #ff9a4d;
             --text-dark: #0F172A;
             --text-medium: #64748B;
             --text-light: #94A3B8;
@@ -136,7 +136,7 @@
 
             <div id="loader"><div></div><div></div></div>
 
-            <h1 class="load-title">Gaming-buddy</h1>
+            <h1 class="load-title">Gaming Companion Booking Platform</h1>
 
             <div class="progress-container">
                 <div class="progress-bar" id="progress-bar"></div>

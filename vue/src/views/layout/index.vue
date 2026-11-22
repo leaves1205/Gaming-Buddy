@@ -5,7 +5,7 @@
       <!-- Logo -->
       <div class="flex items-center gap-3 flex-shrink-0 min-w-[200px]">
         <img :src="logo" alt="" class="w-10 h-10 rounded-xl object-contain p-1 bg-white border border-gray-200/80 shadow-[0_2px_6px_rgba(0,0,0,0.06)]">
-        <span class="text-[20px] font-bold tracking-wide whitespace-nowrap bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)] bg-clip-text text-transparent">Gaming-buddy</span>
+        <span class="text-[20px] font-bold tracking-wide whitespace-nowrap text-[var(--color-primary)]">Admin Console</span>
       </div>
 
       <!-- Horizontal menu -->

@@ -1,7 +1,7 @@
 <template>
   <div class="auth-page">
 
-    <!-- Brand panel on the left -->
+    <!-- Left brand panel -->
     <aside class="auth-brand">
       <div class="brand-overlay"></div>
 
@@ -13,8 +13,8 @@
       <div class="brand-content">
         <!-- Brand row -->
         <div class="brand-row">
-          <img :src="logo" alt="" class="brand-logo">
-          <span class="brand-name">Gaming-buddy</span>
+          <img :src="logo" alt="Admin Console" class="brand-logo">
+          <span class="brand-name">Admin Console</span>
         </div>
 
         <!-- Brand tagline -->
@@ -27,7 +27,7 @@
       </div>
     </aside>
 
-    <!-- Form panel on the right -->
+    <!-- Right form panel -->
     <main class="auth-form">
       <div class="form-box">
         <div class="form-header">
@@ -159,7 +159,7 @@ const handleLogin = () => {
 }
 .brand-overlay {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg, rgba(20,45,80,0.92), rgba(64,158,255,0.78));
+  background: rgba(217, 106, 31, 0.88);
 }
 .brand-content {
   position: relative; z-index: 2; flex: 1;
@@ -212,13 +212,13 @@ const handleLogin = () => {
 .auth-form::before {
   content: ''; position: absolute; top: -90px; right: -90px;
   width: 320px; height: 320px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(64,158,255,0.10), transparent 70%);
+  background: rgba(240, 124, 42, 0.07);
   pointer-events: none;
 }
 .auth-form::after {
   content: ''; position: absolute; bottom: -110px; left: -70px;
   width: 300px; height: 300px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(102,177,255,0.12), transparent 70%);
+  background: rgba(255, 154, 77, 0.09);
   pointer-events: none;
 }
 .form-box { position: relative; z-index: 1; width: 100%; max-width: 400px; }
@@ -243,15 +243,15 @@ const handleLogin = () => {
   border: 1.5px solid var(--color-border, #E5E7EB); transition: all 0.2s ease;
 }
 .field-wrap:focus-within {
-  border-color: var(--color-primary, #409EFF);
-  box-shadow: 0 0 0 3px rgba(64,158,255,0.12);
+  border-color: var(--color-primary, #f07c2a);
+  box-shadow: 0 0 0 3px rgba(240,124,42,0.12);
 }
 .field-error {
   border-color: #FCA5A5 !important;
   box-shadow: 0 0 0 3px rgba(239,68,68,0.08) !important;
 }
 .field-icon { width: 18px; height: 18px; color: #94A3B8; flex-shrink: 0; transition: color 0.2s; }
-.field-wrap:focus-within .field-icon { color: var(--color-primary, #409EFF); }
+.field-wrap:focus-within .field-icon { color: var(--color-primary, #f07c2a); }
 .field-error .field-icon { color: #FCA5A5; }
 .field-input {
   flex: 1; border: none; background: transparent; outline: none;
@@ -270,12 +270,12 @@ const handleLogin = () => {
 .submit-btn {
   margin-top: 4px; height: 48px; border: none; border-radius: 12px;
   font-size: 15px; font-weight: 700; color: #fff; cursor: pointer;
-  background: var(--color-primary, #409EFF);
-  box-shadow: 0 4px 20px rgba(64,158,255,0.3);
+  background: var(--color-primary, #f07c2a);
+  box-shadow: 0 4px 20px rgba(240,124,42,0.3);
   display: flex; align-items: center; justify-content: center; gap: 8px;
   transition: all 0.2s ease;
 }
-.submit-btn:hover { background: var(--color-primary-dark, #3A8EE6); transform: translateY(-1px); box-shadow: 0 6px 28px rgba(64,158,255,0.4); }
+.submit-btn:hover { background: var(--color-primary-dark, #d96a1f); transform: translateY(-1px); box-shadow: 0 6px 28px rgba(240,124,42,0.4); }
 .submit-btn:active { transform: scale(0.97); }
 .submit-loading { opacity: 0.65; cursor: not-allowed; pointer-events: none; }
 
@@ -288,10 +288,10 @@ const handleLogin = () => {
 /* ========== Footer links ========== */
 .login-footer { text-align: center; font-size: 14px; color: var(--color-text-light, #A0AEC0); }
 .login-link {
-  font-weight: 600; color: var(--color-primary, #409EFF); text-decoration: none;
+  font-weight: 600; color: var(--color-primary, #f07c2a); text-decoration: none;
   transition: color 0.2s; margin-left: 4px;
 }
-.login-link:hover { color: var(--color-primary-dark, #3A8EE6); }
+.login-link:hover { color: var(--color-primary-dark, #d96a1f); }
 
 /* ========== Animations ========== */
 @keyframes fadeUp {

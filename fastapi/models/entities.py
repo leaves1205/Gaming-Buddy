@@ -20,6 +20,7 @@ class User(Base):
     avatar: Mapped[str | None] = mapped_column("avatar", String(255), nullable=True)  # Optional avatar URL
     password: Mapped[str] = mapped_column("password", String(255))  # Password stored as plain text
     role_id: Mapped[int] = mapped_column("role_id", Integer, nullable=False, server_default="2")  # Role ID, defaulting to 2 (regular user)
+    balance: Mapped[int] = mapped_column("balance", Integer, nullable=False, server_default="0")
     create_time: Mapped[datetime | None] = mapped_column(
         "create_time", DateTime, server_default=func.now()
     )  # Creation time, defaulting to the database time
