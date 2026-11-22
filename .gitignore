@@ -1,0 +1,31 @@
+# ---- Dependencies and build output ----
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+
+# ---- Local configuration and credentials ----
+.idea/
+.env
+.env.*
+!.env.example
+!/vue/.env.development
+!/vue/.env.production
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ---- Runtime uploads (directories created on startup) ----
+fastapi/file/
+
+# ---- Local WeChat DevTools settings ----
+wx/project.private.config.json
+
+# ---- Test screenshots ----
+.qoder/*.png
+
+# ---- System files ----
+.DS_Store
+Thumbs.db
